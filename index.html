@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head><title>here</title></head>
+    <style>
+.button{
+    border: none;
+    color:black;
+    padding:30px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+img.resized {
+  width: 200px;
+  height: 150px;
+}
+#messageEl {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+.button1 {background-color: #04AA6D;}
+.button2 {background-color: #008CBA;}
+.button3 {background-color: #f50202;}
+.button4 {background-color: #f5a802;}
+p {margin:1;
+font-size: 15px;
+}
+h1{
+    font-size: 30px;
+}
+
+    </style>
+    <body>
+        <div id="buttoncontainer">
+            <h1>
+            please match the equation to the correct image
+            </h1>
+            <p>
+            <img src="problem.png" alt="problem">
+            </p>
+            <p>
+            <button onclick="handleclick(1)">A<img src="A.png"></button>
+            <button onclick="handleclick(2)">B<img src="B.png"></button>
+            </p>
+            <p>
+            <button onclick="handleclick(3)">C<img src='C.png'></button>
+            <button onclick="handleclick(4)">D<img src='D.png'></button>
+            </p>
+        </div>
+        <div id="messageEl"></div>
+        <img id = '好同學' src="莊鎧豪2'.png" style="display: none; margin-top: 20px;" />
+        <script>
+            function handleclick(buttonNumber) {
+            document.getElementById("buttoncontainer").style.display = "none";
+            
+            if (buttonNumber === 4) {
+                messageEl.textContent = "好啦，再讓你講點話，請將這張圖貼到群組以獲取發言權限";
+                document.getElementById('好同學').style.display = 'block'
+            } 
+            else{
+                messageEl.textContent = "你失敗了，請你回去讀微積分，讀完再回來";
+                setTimeout(() => {
+                messageEl.textContent = "";
+                document.getElementById("buttoncontainer").style.display = "block";
+                }, 2000);
+            } 
+
+
+      // Show message, then revert after 2 seconds
+      
+    }
+  </script>
+</body>
+</html>
